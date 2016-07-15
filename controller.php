@@ -139,20 +139,20 @@ class Controller extends BlockController
     public function validate($args)
     {
         $error = Core::make('helper/validation/error');
-        $timeout = intval($args['timeout']);
-        $speed = intval($args['speed']);
+        //$timeout = intval($args['timeout']);
+        //$speed = intval($args['speed']);
 
-        if (!$timeout) {
-            $error->add(t('Slide Duration must be greater than 0.'));
-        }
-        if (!$speed) {
-            $error->add(t('Slide Transition Speed must be greater than 0.'));
-        }
+        //if (!$timeout) {
+            //$error->add(t('Slide Duration must be greater than 0.'));
+        //}
+        //if (!$speed) {
+            //$error->add(t('Slide Transition Speed must be greater than 0.'));
+        //}
         // https://github.com/viljamis/ResponsiveSlides.js/issues/132#issuecomment-12543345
         // "The 'timeout' (amount of time spent on one slide) has to be at least 100 bigger than 'speed', otherwise the function simply returns."
-        if(($timeout - $speed) < 100) {
-            $error->add(t('Slide Duration must be at least 100 ms greater than the Slide Transition Speed.'));
-        }
+        //if(($timeout - $speed) < 100) {
+            //$error->add(t('Slide Duration must be at least 100 ms greater than the Slide Transition Speed.'));
+        //}
         return $error;
     }
 
